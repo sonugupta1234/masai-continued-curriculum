@@ -13,7 +13,7 @@ function createCounter() {
 }
 
 
-const counter = createCounter();
+let counter = createCounter();
 
 console.log(counter.increment()); 
 console.log(counter.increment());
