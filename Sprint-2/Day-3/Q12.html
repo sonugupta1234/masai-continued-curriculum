@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic List Example</title>
+  <style>
+   
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My List</h1>
+
+  <ul id="item-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <button id="add-item-btn">Add Item</button>
+
+  <script>
+    const ul = document.querySelector('#item-list');
+    const button = document.querySelector('#add-item-btn');
+
+    button.addEventListener('click', () => {
+      const newItem = document.createElement('li');
+
+      
+      const sequenceNumber = ul.children.length + 1;
+
+      newItem.textContent = `New Item ${sequenceNumber}`;
+
+      if (sequenceNumber % 2 === 1) {
+        newItem.style.fontWeight = 'bold';
+        newItem.style.color = 'blue';
+      } else {
+        newItem.style.fontStyle = 'italic';
+        newItem.style.color = 'red';
+      }
+
+      ul.appendChild(newItem);
+    });
+  </script>
+
+</body>
+</html>
